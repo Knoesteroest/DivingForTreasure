@@ -1,0 +1,104 @@
+setup
+	zet de spelstaat op START
+
+draw
+	afhankelijk van speltaat
+	START:
+		teken het startscherm
+	SPELEN
+		teken het speelscherm
+	EINDE
+		teken het eindscherm
+	Kijk of er een toets is ingedrukt
+		zo ja, ga naar knopingedrukt
+	updatespelstaat
+
+Wanneer gebruiker met de muis klikt:
+	afhankelijk van speltaat
+	START:
+		check knop(pen)
+	SPELEN
+		Doe niks
+	EINDE
+		check knop(pen)
+			
+spel starten:
+	voor elke duiker
+		scores op 0
+		levens op 3
+		zuurstof vol
+		bootje op 1/4 van het scherm voor speler 1 en op 3/4 voor speler 2
+		duikers positie daarnaast richting het midden
+		duikstaat OPPERVLAK
+	maak een grid van 60 bij 40 (schaalbaar in pixels)
+	zaai mijnen en schatten
+			voor aantal mijnen
+				doe
+					pak random positie
+				tot positie niet al in gebruik is
+			herhaal voor schatten
+				van random type
+		maak een arraylist voor mijnen
+			lees de arraylist in en doe elke mijn in een element
+		
+	verspreid pirhanas
+		voor aantalpirhanas:
+			doe
+					pak random hoogte
+					kies kant van het scherm
+				tot positie niet al in gebruik is
+	strooi zuurstoftankjes in het water
+		voor aantaltankjes:
+			doe
+					pak random hoogte
+					kies kant van het scherm
+				tot positie niet al in gebruik is
+
+updatespelstaat
+	is knop ingedrukt?
+		als de knop er een is die we gebruiken
+			beweeg
+				bodem
+				oppervlakte
+	beweegpiranhas
+	checkhitboxes
+		welke cellen raakt mijn hitbox?
+		
+		vissen
+		mijnen
+		schatten
+		tanks
+		(spelers?)
+
+rakenHitboxes hitbox1 hitbox2
+	als de linkerkant van hitbox1 links zit van de rechterkant van hitbox2
+	als de rechterkant van hitbox1 rechts zit van de linkerkant van hitbox2
+	als de bovenkant van hitbox1 boven zit van de onderkant van hitbox2
+	als de onderkant van hitbox1 boven de bovenkant van hitbox2 
+		als dat allemaal waar is dan raakt het
+
+tekenstartscherm
+	titel
+	tekenknoppen:
+		aantal spelers
+		aantal mijnen
+		aantal schatten
+		(aantal pirhanas)
+		(aantal zuurstoftankjes)
+		start
+
+tekenspeelscherm
+	achtergrond
+		bodem
+		waterlijn
+		lucht (zon, wolkjes)
+	bootjes
+		schermbreedte / spelers + 1
+	scores
+	spelers
+		zuurstofmeter
+	schatten, tankjes, mijnen, (pirhanas)
+
+tekeneindscherm
+	scores
+	opnieuwknop

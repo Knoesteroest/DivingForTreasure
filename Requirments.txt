@@ -1,0 +1,58 @@
+Diving for Treasure
+plaatjes te zoeken:
+muntje, boot, duiker, piranha, zeemijn, zuurstoftank, golf
+
+
+boot
+	plaatje
+duikers=spelers
+	kleur
+	zwemstaat OPPERVLAK DALEND BODEM STIJGEND
+	richting LINKS RECHTS
+	duiksnelheid
+	score
+	levens
+	zuurstof
+	diepte
+bodem
+	diepte
+wateroppervlak
+	schermhoogte
+drijvende schat:lijst
+	positie
+zeemijn:lijst
+	positie
+piranhas:lijst
+	positie
+	snelheid
+	richting
+	beslissingen?
+zuurstoftanks:lijst
+	positie
+knoppen
+	x y b h
+	kleur
+	tekst
+		size kleur font
+
+Startscherm
+	aantalspelerknoppen
+	aantalschattenknoppen
+	startknop
+Spelscherm
+	score
+		gedolven schatten
+		levens
+	waterlijn
+		boot
+	duikers
+		zuurstofniveau
+	onderwater
+		zuurstoftanks
+		schatten
+		zeemijnen
+		piranhas
+Eindscherm
+	speler
+		score
+	opnieuwknop
